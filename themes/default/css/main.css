@@ -1,0 +1,80 @@
+body {
+	font-family: sans-serif;
+	font-size: 2em;
+}
+
+div#content {
+	position: relative;
+}
+
+/* /////////////////////////////////////////// */
+#table-of-contents {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: none;
+}
+
+/* /////////////////////////////////////////// */
+
+h1.title {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	z-index: 100;
+	font-size: 1em;
+	padding: 0;
+	margin: 0;
+}
+
+.section-number-2:before {
+	content: '//';
+}
+.section-number-2 {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.section-number-3,
+.section-number-4,
+.section-number-5,
+.section-number-6 {
+	display: none;
+}
+	
+/* /////////////////////////////////////////// */
+div.outline-2 h2 {
+	width: 100%;
+	text-align: center;
+	margin-top: 1.5em;
+}
+
+div.outline-2 h3,
+div.outline-2 p,
+div.outline-2 ul,
+div.outline-2 pre {
+	margin-left: 2em;
+	margin-right: 2em;
+}
+
+div.outline-2 pre {
+	background: black;
+	color: green;
+	padding: .5em;
+}
+
+/* /////////////////////////////////////////// */
+
+div#postamble {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 101;
+	background: red;
+}
+div#postamble p.author,
+div#postamble p.date,
+div#postamble p.creator,
+div#postamble p.validation {
+	/* display: none; */
+}
