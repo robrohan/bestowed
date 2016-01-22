@@ -69,9 +69,10 @@ var bestowed = bestowed || {};
 	};
 
 	bestowed.handleKeyUp = function(e) {
-		if(e.keyCode === 40 || e.keyCode === 39) {
+		console.log(e.keyCode);
+		if(e.keyCode === 40 || e.keyCode === 39 | e.keyCode === 32) {
 			bestowed.nextSlide();
-		} else if (e.keyCode === 38 || e.keyCode === 37) {
+		} else if (e.keyCode === 38 || e.keyCode === 37 || e.keyCode === 8) {
 			bestowed.previousSlide();
 		}
 	};
