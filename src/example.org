@@ -9,7 +9,7 @@
 #+CREATOR: <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)
 #+HTML_CONTAINER: div
 #+HTML_DOCTYPE: <doctype html>
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="bestowed.css" /><script type="text/javascript" src="bestowed.js"></script><link rel="stylesheet" type="text/css" href="../themes/default/css/main.css" /><script type="text/javascript" src="../themes/default/js/main.js"></script><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="viewport" content="width=device-width, initial-scale=1">
+#+HTML_HEAD: <meta name="bestowed-theme" value="../themes/default"><script type="text/javascript" src="bestowed.js"></script>
 #+HTML_HEAD_EXTRA:
 #+HTML_LINK_HOME:
 #+HTML_LINK_UP:
