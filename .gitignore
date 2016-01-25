@@ -2,3 +2,5 @@
 *~
 .tern-port
 webqem
+node_modules
+build

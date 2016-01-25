@@ -8,8 +8,8 @@
 #+OPTIONS: html5-fancy:nil tex:t
 #+CREATOR: <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)
 #+HTML_CONTAINER: div
-#+HTML_DOCTYPE: <doctype html>
-#+HTML_HEAD: <meta name="bestowed-theme" value="../themes/default"><script type="text/javascript" src="bestowed.js"></script>
+#+HTML_DOCTYPE: <!doctype html>
+#+HTML_HEAD: <meta name="bestowed-theme" value="themes/default"><script type="text/javascript" src="../build/bestowed.min.js"></script>
 #+HTML_HEAD_EXTRA:
 #+HTML_LINK_HOME:
 #+HTML_LINK_UP:
@@ -35,24 +35,21 @@ rm -rf /
 #+END_SRC
 * testing images
 #+caption: This is an image to test the CSS. Image resizes itself to fit, but does not update while resizing.
-[[../img/misc/600.jpg]]
+[[http://www.seedkitchen.com/wp-content/uploads/2014/09/vegan0.jpg]]
 
 * sdjhgdjkhgsfdg
 some text here.
-
 #+caption: This is an image to test the CSS. Image resizes itself to fit, but does not update while resizing.
 [[../img/misc/600.jpg]]
 
 #+CAPTION: This is a cool, cool picture
-#+ATTR_HTML: 
+#+ATTR_HTML:
 #+ATTR_LaTeX: height=.77\textheight
  [[../img/100822-Prospect_lane.png]]
 
 * onl-cockpit
-
 #+CAPTION: onl-cockpit
 #+LABEL: fig: onl-cockpit
 #+ATTR_LaTeX: height=.77\textheight
 [[../img/about/onl-cockpit.jpg]]
-
-
+* Thank You
