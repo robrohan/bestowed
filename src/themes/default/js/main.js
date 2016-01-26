@@ -1,5 +1,5 @@
 var bestowed = bestowed || {};
 
 (function(){
-	console.log("hello");
+	console.log("Hello! I am loaded from the default theme.");
 })();

@@ -1,0 +1,105 @@
+#+TITLE: Bestowed Example
+#+description: Using emacs orgmode
+#+AUTHOR: Rob Rohan @robrohan
+#+DATE: Jan 20, 2016
+
+# C+c C+e # default
+#+OPTIONS: html-link-use-abs-url:nil html-postamble:auto
+#+OPTIONS: html-preamble:t html-scripts:nil html-style:nil
+#+OPTIONS: html5-fancy:nil tex:t
+#+CREATOR: <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)
+#+HTML_CONTAINER: div
+#+HTML_DOCTYPE: <!doctype html>
+#+HTML_HEAD: <meta name="bestowed-theme" value="themes/default"><script type="text/javascript" src="../build/bestowed.min.js"></script>
+#+HTML_HEAD_EXTRA:
+#+HTML_LINK_HOME:
+#+HTML_LINK_UP:
+#+HTML_MATHJAX:
+#+INFOJS_OPT:
+#+LATEX_HEADER:
+
+* Bestowed
+#+BEGIN_HTML
+<div style="font-size: 3em; width: 100%; text-align: center;">🎁</div>
+#+END_HTML
+Bestowed is a simple Javascript library that can be added to an Org-Mode file in order to create presentations.
+- Uses CSS for styling
+- Created using emacs' org-mode and it's default HTML export
+- Nothing to install, just need to add a setting to the org-mode export
+- Bestowed has simple navigation:
+  - Next Slide: Space bar, j, down arrow, or right arrow
+  - Previous Slide: Delete, k, up arrow, or left arrow
+Go to the next slide...
+* Using emacs Org-Mode for Presentations
+Here are some benefits of using Bestowed
+- Works with your normal workflow (if you're stuck in the 70s like me)
+- Can have presenations right next to the code
+- You can store presos in:
+  - _git_
+  - _svn_
+  - *whatever*
+Go to the next slide...
+* How It Works
+You can add bestowed to any org-mode file by doing the following:
+- There is nothing to install into emacs
+- At the top of the org-mode file type: _C+c C+e #_ then type 'default'
+- Edit the inserted headers with the following:
+#+BEGIN_SRC 
+...
+#+OPTIONS: html-preamble:t html-scripts:nil html-style:nil
+...
+#+HTML_DOCTYPE: <!doctype html>
+#+HTML_HEAD: <meta name="bestowed-theme" value="themes/none"><script type="text/javascript" src="../build/bestowed.min.js"></script>
+...
+#+END_SRC
+- Export org-mode as HTML with _C+c C+e h h_
+- View the exported HTML file with your browser
+(that HTML HEAD value is: <meta name="bestowed-theme" value="themes/none"><script type="text/javascript" src="../build/bestowed.min.js"></script>)
+* Showing Code
+Bestowed can show basic code blocks by adding BEGIN SRC and END SRC sections.
+
+It looks like this:
+
+#+BEGIN_SRC sh
+docker ps
+ls -alFh
+rm -rf /
+#+END_SRC
+- In org-mode, type _<s_ and then press _tab_
+- Or start a block with BEGIN SRC and end with END SRC
+* Raw HTML
+Since Bestowed is very basic, if you need to do some fancy HTML you can always insert a raw block of HTML.
+- Type _<h_ and press _tab_
+- Or start a block with BEGIN HTML and end with END HTML
+- Example:
+#+BEGIN_HTML
+<div style="width: 100%; text-align: center">
+<iframe width="420" height="315" src="https://www.youtube.com/embed/gGO4RPzAKQY" frameborder="0" allowfullscreen></iframe>
+</div>
+#+END_HTML
+* Images And Links
+You can include images in two ways:
+- By using the raw HTML block (from the last slide)
+- Or using the standard Org-mode way: typing [ [ image path ] ]
+- Images can (obviously) be located online or other sites
+#+ATTR_HTML: class="center"
+[[http://www.seedkitchen.com/wp-content/uploads/2014/09/vegan0.jpg]]
+- Links are almost the same as images: [ [ http:// ] [ display text ] ]
+* Themes
+This is the default theme.  You can use other themes by adding the theme path to the org-mode file.
+
+In the export section, add the theme path in the /bestowed-theme/ meta tag:
+
+#+BEGIN_SRC 
+...
+#+HTML_HEAD: <meta name="bestowed-theme" value="themes/default"><script type="text/javascript" src="../build/bestowed.min.js"></script>
+...
+#+END_SRC
+
+You can put a full URL into /bestowed-theme/ value to load a theme.  If the value doesn't start with _http_ then bestowed will look relative to the bestowed Javascript file.
+* Thank You
+#+BEGIN_HTML
+<div style="font-size: 3em; width: 100%; text-align: center;">🎁</div>
+#+END_HTML
+Thank you for checking out Bestowed.  I hope you find it useful and fun.  You can contact me [[https://twitter.com/robrohan][on twitter]] if you like.
+# C-c C-e h h

@@ -1,0 +1,13 @@
+
+span.section-number-2:before {
+    content: '//';
+}
+span.section-number-2 {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    font-size: 0.5em;
+    padding-left: 0.5em;
+    color: #efefef;
+}

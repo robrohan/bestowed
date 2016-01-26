@@ -1,4 +1,5 @@
 var bestowed = bestowed || {};
+var exports = exports || {};
 
 (function(){
 	"use strict";
@@ -10,21 +11,50 @@ var bestowed = bestowed || {};
 	bestowed.cachedHead = null;
 	bestowed.CSS_ENTRY = '/css/main.css';
 	bestowed.JS_ENTRY = '/js/main.js';
+	bestowed.CSS_FILE = 'bestowed.min.css';
+	bestowed.fullPath = null;
 
 	bestowed.init = function() {
+		// cache the slides
 		bestowed.slideCache = bestowed.slides();
+		// and the length
 		bestowed.maxSlides = bestowed.slideCache.length;
+		// and the path to this script
+		bestowed.fullPath = bestowed.scriptPath(document.getElementsByTagName("script"));
+
 		bestowed.changeSlide(0);
 		bestowed.current = 0;
 
+		// Add some meta headers that org-mode export doesn't do
 		bestowed.writeMeta({'charset':'utf-8'});
 		bestowed.writeMeta({'http-equiv':'X-UA-Compatible', 'content':"IE=edge,chrome=1"});
 		bestowed.writeMeta({'name':"viewport", 'content':"width=device-width, initial-scale=1"});
 
-		bestowed.writeStyle('bestowed.css');
+		// Load the basic system css file
+		bestowed.writeStyle(bestowed.fullPath + bestowed.CSS_FILE);
+
+		// Try to load the theme specified in the org file
 		var theme = bestowed.findThemePath();
-		bestowed.writeStyle(theme + bestowed.CSS_ENTRY);
-		bestowed.writeScript(theme + bestowed.JS_ENTRY);
+		if(!theme.toString().match(/^http/)) {
+			theme = bestowed.fullPath + theme;
+		}
+		try {
+			bestowed.writeStyle(theme + bestowed.CSS_ENTRY);
+			bestowed.writeScript(theme + bestowed.JS_ENTRY);
+		} catch(e) {
+			console.log("Failed to load theme. " + e);
+		}
+	};
+
+	bestowed.scriptPath = function(scriptsArray) {
+		if(bestowed.fullPath) {
+			return bestowed.fullPath;
+		}
+		var givenPath = scriptsArray[scriptsArray.length-1].src;
+		var parts = givenPath.split('/');
+		parts.pop();
+		var newPath = parts.join("/");
+		return newPath + '/';
 	};
 
 	bestowed.writeStyle = function(path) {
@@ -110,7 +140,8 @@ var bestowed = bestowed || {};
 		element.className = element.className.replace(re, newClass);
 	};
 
-	bestowed.handleClick = function(e) {
+	//////////////////////////////////////////////////////////////////////////
+	/* bestowed.handleClick = function(e) {
 		if(e.altKey === true) {
 			bestowed.previousSlide();
 		} else {
@@ -118,19 +149,24 @@ var bestowed = bestowed || {};
 		}
 		e.preventDefault();
 		return false;
-	};
+	}; */
 
 	bestowed.handleKeyDown = function(e) {
-		if(e.keyCode === 40 || e.keyCode === 39 | e.keyCode === 32) {
+		if(e.keyCode === 40 || e.keyCode === 39 | e.keyCode === 32 | e.keyCode === 74) {
 			bestowed.nextSlide();
-		} else if (e.keyCode === 38 || e.keyCode === 37 || e.keyCode === 8) {
+			e.preventDefault();
+			return false;
+		} else if (e.keyCode === 38 || e.keyCode === 37 || e.keyCode === 8 || e.keyCode === 75) {
 			bestowed.previousSlide();
+			e.preventDefault();
+			return false;
 		}
-		e.preventDefault();
-		return false;
 	};
 })();
 
+// Register our listeners
 window.addEventListener("load", bestowed.init);
-document.addEventListener("click", bestowed.handleClick);
+// document.addEventListener("click", bestowed.handleClick);
 window.addEventListener("keydown", bestowed.handleKeyDown);
+
+exports.bestowed = bestowed;

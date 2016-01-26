@@ -1,0 +1,230 @@
+<!doctype html>
+<html>
+<head>
+<title>Bestowed Example</title>
+<!-- 2016-01-26 Tue 17:08 -->
+<meta  charset="utf-8">
+<meta  name="generator" content="Org-mode">
+<meta  name="author" content="Rob Rohan @robrohan">
+<meta  name="description" content="Using emacs orgmode"
+>
+<meta name="bestowed-theme" value="themes/default"><script type="text/javascript" src="../build/bestowed.min.js"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Bestowed Example</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Bestowed</a></li>
+<li><a href="#sec-2">2. Using emacs Org-Mode for Presentations</a></li>
+<li><a href="#sec-3">3. How It Works</a></li>
+<li><a href="#sec-4">4. Showing Code</a></li>
+<li><a href="#sec-5">5. Raw HTML</a></li>
+<li><a href="#sec-6">6. Images And Links</a></li>
+<li><a href="#sec-7">7. Themes</a></li>
+<li><a href="#sec-8">8. Thank You</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Bestowed</h2>
+<div class="outline-text-2" id="text-1">
+<div style="font-size: 3em; width: 100%; text-align: center;">🎁</div>
+<p>
+Bestowed is a simple Javascript library that can be added to an Org-Mode file in order to create presentations.
+</p>
+<ul class="org-ul">
+<li>Uses CSS for styling
+</li>
+<li>Created using emacs' org-mode and it's default HTML export
+</li>
+<li>Nothing to install, just need to add a setting to the org-mode export
+</li>
+<li>Bestowed has simple navigation:
+<ul class="org-ul">
+<li>Next Slide: Space bar, j, down arrow, or right arrow
+</li>
+<li>Previous Slide: Delete, k, up arrow, or left arrow
+</li>
+</ul>
+</li>
+</ul>
+<p>
+Go to the next slide&#x2026;
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Using emacs Org-Mode for Presentations</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Here are some benefits of using Bestowed
+</p>
+<ul class="org-ul">
+<li>Works with your normal workflow (if you're stuck in the 70s like me)
+</li>
+<li>Can have presenations right next to the code
+</li>
+<li>You can store presos in:
+<ul class="org-ul">
+<li><span class="underline">git</span>
+</li>
+<li><span class="underline">svn</span>
+</li>
+<li><b>whatever</b>
+</li>
+</ul>
+</li>
+</ul>
+<p>
+Go to the next slide&#x2026;
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> How It Works</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+You can add bestowed to any org-mode file by doing the following:
+</p>
+<ul class="org-ul">
+<li>There is nothing to install into emacs
+</li>
+<li>At the top of the org-mode file type: <span class="underline">C+c C+e #</span> then type 'default'
+</li>
+<li>Edit the inserted headers with the following:
+</li>
+</ul>
+<pre class="example">
+...
+#+OPTIONS: html-preamble:t html-scripts:nil html-style:nil
+...
+#+HTML_DOCTYPE: &lt;!doctype html&gt;
+#+HTML_HEAD: &lt;meta name="bestowed-theme" value="themes/none"&gt;&lt;script type="text/javascript" src="../build/bestowed.min.js"&gt;&lt;/script&gt;
+...
+</pre>
+<ul class="org-ul">
+<li>Export org-mode as HTML with <span class="underline">C+c C+e h h</span>
+</li>
+<li>View the exported HTML file with your browser
+</li>
+</ul>
+<p>
+(that HTML HEAD value is: &lt;meta name="bestowed-theme" value="themes/none"&gt;&lt;script type="text/javascript" src="../build/bestowed.min.js"&gt;&lt;/script&gt;)
+</p>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Showing Code</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Bestowed can show basic code blocks by adding BEGIN SRC and END SRC sections.
+</p>
+
+<p>
+It looks like this:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh">docker ps
+ls -alFh
+rm -rf /
+</pre>
+</div>
+<ul class="org-ul">
+<li>In org-mode, type <span class="underline">&lt;s</span> and then press <span class="underline">tab</span>
+</li>
+<li>Or start a block with BEGIN SRC and end with END SRC
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Raw HTML</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Since Bestowed is very basic, if you need to do some fancy HTML you can always insert a raw block of HTML.
+</p>
+<ul class="org-ul">
+<li>Type <span class="underline">&lt;h</span> and press <span class="underline">tab</span>
+</li>
+<li>Or start a block with BEGIN HTML and end with END HTML
+</li>
+<li>Example:
+</li>
+</ul>
+<div style="width: 100%; text-align: center">
+<iframe width="420" height="315" src="https://www.youtube.com/embed/gGO4RPzAKQY" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Images And Links</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+You can include images in two ways:
+</p>
+<ul class="org-ul">
+<li>By using the raw HTML block (from the last slide)
+</li>
+<li>Or using the standard Org-mode way: typing [ [ image path ] ]
+</li>
+<li>Images can (obviously) be located online or other sites
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="http://www.seedkitchen.com/wp-content/uploads/2014/09/vegan0.jpg" alt="vegan0.jpg">
+</p>
+</div>
+<ul class="org-ul">
+<li>Links are almost the same as images: [ [ <a href="http://">http://</a> ] [ display text ] ]
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Themes</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+This is the default theme.  You can use other themes by adding the theme path to the org-mode file.
+</p>
+
+<p>
+In the export section, add the theme path in the <i>bestowed-theme</i> meta tag:
+</p>
+
+<pre class="example">
+...
+#+HTML_HEAD: &lt;meta name="bestowed-theme" value="themes/default"&gt;&lt;script type="text/javascript" src="../build/bestowed.min.js"&gt;&lt;/script&gt;
+...
+</pre>
+
+<p>
+You can put a full URL into <i>bestowed-theme</i> value to load a theme.  If the value doesn't start with <span class="underline">http</span> then bestowed will look relative to the bestowed Javascript file.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> Thank You</h2>
+<div class="outline-text-2" id="text-8">
+<div style="font-size: 3em; width: 100%; text-align: center;">🎁</div>
+<p>
+Thank you for checking out Bestowed.  I hope you find it useful and fun.  You can contact me <a href="https://twitter.com/robrohan">on twitter</a> if you like.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: Jan 20, 2016</p>
+<p class="author">Author: Rob Rohan @robrohan</p>
+<p class="date">Created: 2016-01-26 Tue 17:08</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

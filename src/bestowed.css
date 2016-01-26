@@ -1,61 +1,49 @@
-html,
-button,
-input,
-select,
-textarea {
-    color: #222;
-}
-
-body {
-    font-size: 1em;
+body, html {
+	height: 100%;
+    width: 100%;
+	min-height: 100%;
+	background-color: white;
+	padding:0;
+	margin:0;
+    font-size: 1.3em;
     line-height: 1.4;
-}
-
-::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
-::selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
+    font-family: sans-serif;
 }
 
 img {
     vertical-align: middle;
 }
 
-fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
+pre {
+    background: black;
+    color: #00ff00;
+    padding: 0.5em;
+    font-family: monospace;
+    overflow: auto;
 }
 
-textarea {
-    resize: vertical;
+a {
+    color: #ff1313;
 }
 
-/* /////////////////////////////////////////// */
+div > h2,
+div > h3,
+div > h4 {
+    width: 100%;
+    text-align: center;
+}
 
-body, html {
-	height: 100%;
-	min-height: 100%;
-	background-color: white;
-	padding:0;
-	margin:0;
+.underline {
+    text-decoration: underline;
+}
+
+.figure p {
+    font-size: .6em;
 }
 
 div#content {
-	position: relative;
+    height: 100%;
+    width: 100%;
 }
 
 /* /////////////////////////////////////////// */
@@ -69,11 +57,29 @@ div#content {
 
 h1.title {
 	position: fixed;
-	bottom: 0;
+	top: 0;
 	right: 0;
 	z-index: 100;
+    margin: 0;
+    padding: 0 .5em 0 0;
+    font-size: 0.8em;
+    color: #efefef;
 }
 
+span.section-number-2,
+span.section-number-3,
+span.section-number-4,
+span.section-number-5 {
+    display: none;
+}
+
+.outline-3,
+.outline-4,
+.outline-5 {
+    padding-left: 1.5em;
+}
+
+/* This is the slide wrapping level */
 div.outline-2 {
 	position: fixed;
 	top: 0;
@@ -92,6 +98,15 @@ div.outline-2 {
     animation-fill-mode: both;
 }
 
+div.outline-2 p {
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+}
+div.outline-2 div.outline-text-2 {
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
 @-webkit-keyframes current {
     0% {
         opacity: 0;
@@ -100,7 +115,7 @@ div.outline-2 {
         opacity: 1;
     }
 }
-         
+
 @keyframes current {
     0% {
         opacity: 0;
@@ -109,10 +124,11 @@ div.outline-2 {
         opacity: 1;
     }
 }
-         
+
 div.outline-2.current {
     -webkit-animation-name: current;
     animation-name: current;
+    z-index: 2000;
 }
 
 @-webkit-keyframes previous {
@@ -123,7 +139,7 @@ div.outline-2.current {
         opacity: 0;
     }
 }
-         
+
 @keyframes previous {
     0% {
         opacity: 1;
@@ -136,16 +152,33 @@ div.outline-2.current {
 div.outline-2.previous {
     -webkit-animation-name: previous;
     animation-name: previous;
+    z-index: 0;
 }
 
 /* /////////////////////////////////////////// */
 
 div#postamble {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 0 0 0 .5em;
+    margin: 0;
+    z-index: 2001;
+}
+div#postamble p {
+    display: inline-block;
+    font-size: 0.5em;
+    padding: 0;
+    margin: 0;
+}
+
+div#postamble p.author:after {
+    content: ' - ';
 }
 
 div#postamble p.author,
+div#postamble p.creator {}
 div#postamble p.date,
-div#postamble p.creator,
 div#postamble p.validation {
-	display: none;
+    display: none;
 }
