@@ -42,7 +42,7 @@ Go to the next slide...
 * How It Works
 You can add bestowed to any org-mode file by doing the following:
 - There is nothing to install into emacs
-- At the top of the org-mode file type: _C+c C+e #_ then type 'default'
+- At the top of the org-mode file type: _C+c C+e #_ then type 'html'
 - Edit the inserted headers with the following:
 #+BEGIN_SRC 
 ...
