@@ -54,10 +54,15 @@ Themes do not have to live within the code base, but if they do you can referenc
 
 ## Building the Javascript Code
 
-You'll need Node and grunt installed.  Node can be installed from the node [website](https://nodejs.org/en/) or by using your favourite package manager.  Once node is installed, npm (node package manager) should also be installed.   You should then be able to run the following commands:
+You will need Node and grunt installed.  Node can be installed from the node [website](https://nodejs.org/en/) or by using your favourite package manager.  Once node is installed, npm (node package manager) should also be installed.   You should then be able to run the following commands:
 
     $ npm install -g grunt
+    $ npm install -g mocha
     $ npm install
     $ grunt
 
 The output should be in the build directory.
+
+## Running tests
+
+    $ mocha

@@ -35,7 +35,7 @@ var exports = exports || {};
 
 		// Try to load the theme specified in the org file
 		var theme = bestowed.findThemePath();
-		if(!theme.toString().match(/^http/)) {
+		if(bestowed.isLocalPath(theme)) {
 			theme = bestowed.fullPath + theme;
 		}
 		try {
@@ -44,6 +44,13 @@ var exports = exports || {};
 		} catch(e) {
 			console.log("Failed to load theme. " + e);
 		}
+	};
+
+	bestowed.isLocalPath = function(path) {
+		if(path.toString().match(/^http/) || path.toString().match(/^file/)) {
+			return false;
+		}
+		return true;
 	};
 
 	bestowed.scriptPath = function(scriptsArray) {
@@ -162,11 +169,17 @@ var exports = exports || {};
 			return false;
 		}
 	};
+
+	bestowed.register = function() {
+		if(typeof(window) !== 'undefined') {
+			// Register our listeners
+			window.addEventListener("load", bestowed.init);
+			// document.addEventListener("click", bestowed.handleClick);
+			window.addEventListener("keydown", bestowed.handleKeyDown);
+		}
+	};
 })();
 
-// Register our listeners
-window.addEventListener("load", bestowed.init);
-// document.addEventListener("click", bestowed.handleClick);
-window.addEventListener("keydown", bestowed.handleKeyDown);
+bestowed.register();
 
 exports.bestowed = bestowed;

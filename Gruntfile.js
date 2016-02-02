@@ -70,6 +70,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
 
-    grunt.registerTask('default', ['clean', 'jshint', 'mocha', 'uglify', 'cssmin', 'copy']);
-    grunt.registerTask('watch', ['jshint', 'mocha', 'uglify', 'watch']);
+    grunt.registerTask('default', ['clean', 'jshint', 'uglify', 'cssmin', 'copy']);
+    grunt.registerTask('watch', ['jshint', 'uglify', 'watch']);
 };

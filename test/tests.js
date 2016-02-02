@@ -1,15 +1,45 @@
-var chai = require("chai"),
-    expect = chai.expect;
+var jsdom = require('mocha-jsdom');
+var expect = require("chai").expect;
 
-var Bestowed = require( "../src/bestowed.js" ).Bestowed;
+var bestowed = require( "../src/bestowed.js" ).bestowed;
 
-describe('Array', function() {
-    describe('#indexOf()', function() {
-        it('should return -1 when the value is not present', function() {
-            //chai.assert.equal(-1, [1,2,3].indexOf(5));
-            //chai.assert.equal(-1, [1,2,3].indexOf(0));
-            console.log("wtf");
-            expect([1,2,3].indexOf(0)).toBe(-1);
+describe('Bestowed', function() {
+    jsdom();
+
+    describe('#scriptPath()', function() {
+        it('should remove filename from path and return path', function() {
+            var script = document.createElement('script');
+            script.src = "http://yadda.com/thing/thang/thong.html";
+            var input = [script];
+            expected = "http://yadda.com/thing/thang/";
+
+            actual = bestowed.scriptPath(input);
+
+            expect(actual).eql(expected);
         });
     });
+
+    describe('#isLocalPath()', function() {
+        it('should know if a / path is within our source tree', function() {
+            var expected = true;
+            var actual = bestowed.isLocalPath("yadda.com/thing/thang/");
+
+            expect(actual).eql(expected);
+        });
+
+        it('should know if an http path is within our source tree', function() {
+            var expected = false;
+            var actual = bestowed.isLocalPath("http://yadda.com/thing/thang/");
+
+            expect(actual).eql(expected);
+        });
+
+        it('should know if an file path is within our source tree', function() {
+            var expected = false;
+            var actual = bestowed.isLocalPath("file://yadda.com/thing/thang/");
+
+            expect(actual).eql(expected);
+        });
+    });
+
 });
