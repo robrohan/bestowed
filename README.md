@@ -1,6 +1,6 @@
 # Bestowed
 
-Bestowed is a some simple Javascript and CSS code for creating presentations out of org-mode files.  Org-mode is an outlining mode inside of emacs.
+Bestowed is some simple Javascript and CSS code for creating presentations out of org-mode files.  Org-mode is an outlining mode inside of emacs.
 
 ## Quick Start
 
@@ -8,7 +8,7 @@ If you look in the example directory, you will find an _example.org_ file.  Open
 
 ## Slower than Quick Start, but Still Quick.
 
-In an org-mode file, at the top of the file type: _C+c C+e #_ then type _default_.  Change the following values:
+In an org-mode file, at the top of the file type: _C+c C+e #_ then type _html_.  Change the following values:
 
     ...
     #+OPTIONS: html-preamble:t html-scripts:nil html-style:nil
