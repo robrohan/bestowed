@@ -10,7 +10,7 @@
 #+CREATOR: <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)
 #+HTML_CONTAINER: div
 #+HTML_DOCTYPE: <!doctype html>
-#+HTML_HEAD: <meta name="bestowed-theme" value="themes/default"><script type="text/javascript" src="../build/bestowed.min.js"></script>
+#+HTML_HEAD: <meta name="bestowed-theme" value="themes/default"><script async src="http://s3.amazonaws.com/cdn.robrohan.com/bestowed/bestowed.min.js"></script>
 #+HTML_HEAD_EXTRA:
 #+HTML_LINK_HOME:
 #+HTML_LINK_UP:
@@ -44,7 +44,7 @@ You can add bestowed to any org-mode file by doing the following:
 - There is nothing to install into emacs
 - At the top of the org-mode file type: _C+c C+e #_ then type 'html'
 - Edit the inserted headers with the following:
-#+BEGIN_SRC 
+#+BEGIN_SRC
 ...
 #+OPTIONS: html-preamble:t html-scripts:nil html-style:nil
 ...
@@ -95,7 +95,7 @@ You can use standard org-mode tables too.
 
 * Quotes
 To do a quotes:
-- Type _<q_ and press _tab_ 
+- Type _<q_ and press _tab_
 - Or use BEGIN QUOTE and END QUOTE
 #+BEGIN_QUOTE
 To err is human, but to really foul things up requires adherence to the Google interview process.  --Almost Everyone
@@ -105,7 +105,7 @@ This is the default theme.  You can use other themes by adding the theme path to
 
 In the export section, add the theme path in the /bestowed-theme/ meta tag:
 
-#+BEGIN_SRC 
+#+BEGIN_SRC
 ...
 #+HTML_HEAD: <meta name="bestowed-theme" value="themes/default"><script type="text/javascript" src="../build/bestowed.min.js"></script>
 ...

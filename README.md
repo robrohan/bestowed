@@ -1,6 +1,26 @@
 # Bestowed
 
-Bestowed is a _simple_ framework for creating presentations out of org-mode files.  Org-mode is an outlining mode inside of emacs.
+Bestowed is a some simple Javascript and CSS code for creating presentations out of org-mode files.  Org-mode is an outlining mode inside of emacs.
+
+## Quick Start
+
+If you look in the example directory, you will find an _example.org_ file.  Open this file in emacs 24, and type _C+c C+e_ then type _h h_.  The output of this process is _example.html_ in the same folder as the org file.  Open _example.html_ in your favourite browser.
+
+## Slower than Quick Start, but Still Quick.
+
+In an org-mode file, at the top of the file type: _C+c C+e #_ then type _default_.  Change the following values:
+
+    ...
+    #+OPTIONS: html-preamble:t html-scripts:nil html-style:nil
+    ...
+    #+HTML_DOCTYPE: <!doctype html>
+    ...
+
+And add the following:
+
+    #+HTML_HEAD: <meta name="bestowed-theme" value="themes/default"><script async src="http://s3.amazonaws.com/cdn.robrohan.com/bestowed/bestowed.min.js"></script>
+
+If you prefer, here is a [YouTube video](https://www.youtube.com/watch?v=S0Ley_QoBHo) about how Bestowed works.
 
 ## Code Layout
 
@@ -31,6 +51,8 @@ Themes do not have to live within the code base, but if they do you can referenc
               └── js/
 
 ## Building
+
+You'll need Node and grunt installed.  Node can be installed from the node [website](https://nodejs.org/en/) or by using your favourite package manager.  Once node is installed, npm (node package manager) should also be installed.   You should then be able to run the following commands:
 
     $ npm install -g grunt
     $ npm install
