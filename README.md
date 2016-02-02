@@ -20,6 +20,8 @@ And add the following:
 
     #+HTML_HEAD: <meta name="bestowed-theme" value="themes/default"><script async src="http://s3.amazonaws.com/cdn.robrohan.com/bestowed/bestowed.min.js"></script>
 
+Then export the org file as html by doing: _C+c C+e_ then type _h h_.  Open the exported html in your favourite browser (as long as your favourite is the latest Chrome or Safari).
+
 If you prefer, here is a [YouTube video](https://www.youtube.com/watch?v=S0Ley_QoBHo) about how Bestowed works.
 
 ## Code Layout
@@ -50,7 +52,7 @@ Themes do not have to live within the code base, but if they do you can referenc
               ├── css/
               └── js/
 
-## Building
+## Building the Javascript Code
 
 You'll need Node and grunt installed.  Node can be installed from the node [website](https://nodejs.org/en/) or by using your favourite package manager.  Once node is installed, npm (node package manager) should also be installed.   You should then be able to run the following commands:
 
