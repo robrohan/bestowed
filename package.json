@@ -4,6 +4,9 @@
     "type": "git",
     "url": "https://github.com/robrohan/bestowed.git"
   },
+  "scripts": {
+    "test": "mocha"
+  },
   "version": "0.1.0",
   "devDependencies": {
     "chai": "^3.4.1",
