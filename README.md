@@ -1,5 +1,7 @@
 # Bestowed
 
+[![Build Status](https://travis-ci.org/robrohan/bestowed.svg?branch=master)](https://travis-ci.org/robrohan/bestowed)
+
 Bestowed is some simple Javascript and CSS code for creating presentations out of org-mode files.  Org-mode is an outlining mode inside of emacs.
 
 ## Quick Start
