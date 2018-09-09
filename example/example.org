@@ -1,27 +1,25 @@
 #+TITLE: Bestowed Example
-#+description: Using emacs orgmode
 #+AUTHOR: Rob Rohan @robrohan
 #+DATE: Jan 20, 2016
 
 # C+c C+e # default
-#+OPTIONS: html-link-use-abs-url:nil html-postamble:auto
-#+OPTIONS: html-preamble:t html-scripts:nil html-style:nil
-#+OPTIONS: html5-fancy:nil tex:t
-#+CREATOR: <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t broken-links:nil c:nil creator:nil
+#+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+OPTIONS: timestamp:t title:t toc:t todo:t |:t
 #+HTML_CONTAINER: div
 #+HTML_DOCTYPE: <!doctype html>
-#+HTML_HEAD: <meta name="bestowed-theme" value="themes/default"><script async src="http://s3.amazonaws.com/cdn.robrohan.com/bestowed/bestowed.min.js"></script>
-#+HTML_HEAD_EXTRA:
-#+HTML_LINK_HOME:
-#+HTML_LINK_UP:
-#+HTML_MATHJAX:
-#+INFOJS_OPT:
-#+LATEX_HEADER:
+#+HTML_HEAD: <meta name="bestowed-theme" value="themes/default"><script async src="bestowed.min.js"></script>
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 26.1 (Org mode 9.1.9)
 
 * Bestowed
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <div style="font-size: 3em; width: 100%; text-align: center;">🎁</div>
-#+END_HTML
+#+END_EXPORT
 Bestowed is a simple Javascript library that can be added to an Org-Mode file in order to create presentations.
 - Uses CSS for styling
 - Created using emacs' org-mode and it's default HTML export
@@ -71,17 +69,16 @@ Since Bestowed is very basic, if you need to do some fancy HTML you can always i
 - Type _<h_ and press _tab_
 - Or start a block with BEGIN HTML and end with END HTML
 - Example:
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <div style="width: 100%; text-align: center">
 <iframe width="420" height="315" src="https://www.youtube.com/embed/gGO4RPzAKQY" frameborder="0" allowfullscreen></iframe>
 </div>
-#+END_HTML
+#+END_EXPORT
 * Images And Links
 You can include images in two ways:
 - By using the raw HTML block (from the last slide)
 - Or using the standard Org-mode way: typing [ [ image path ] ]
 - Images can (obviously) be located online or other sites
-#+ATTR_HTML: class="center"
 [[http://www.seedkitchen.com/wp-content/uploads/2014/09/vegan0.jpg]]
 - Links are almost the same as images: [ [ http:// ] [ display text ] ]
 * Tables
@@ -98,7 +95,7 @@ To do a quotes:
 - Type _<q_ and press _tab_
 - Or use BEGIN QUOTE and END QUOTE
 #+BEGIN_QUOTE
-To err is human, but to really foul things up requires adherence to the Google interview process.  --Almost Everyone
+To err is human, but to really foul things up requires a computer
 #+END_QUOTE
 * Themes
 This is the default theme.  You can use other themes by adding the theme path to the org-mode file.
@@ -113,8 +110,8 @@ In the export section, add the theme path in the /bestowed-theme/ meta tag:
 
 You can put a full URL into /bestowed-theme/ value to load a theme.  If the value doesn't start with _http_ then bestowed will look relative to the bestowed Javascript file.
 * Thank You
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <div style="font-size: 3em; width: 100%; text-align: center;">🎁</div>
-#+END_HTML
+#+END_EXPORT
 Thank you for checking out Bestowed.  I hope you find it useful and fun.  You can contact me [[https://twitter.com/robrohan][on twitter]] if you like.
 # C-c C-e h h
