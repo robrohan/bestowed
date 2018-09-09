@@ -19,6 +19,6 @@
     "grunt-mocha": "^1.1.0",
     "jsdom": "^8.0.2",
     "mocha": "^5.2.0",
-    "mocha-jsdom": "^1.0.0"
+    "mocha-jsdom": "~1.1.0"
   }
 }
