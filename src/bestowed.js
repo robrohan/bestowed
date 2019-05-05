@@ -66,7 +66,7 @@ var bestowed = bestowed || {};
     if (bestowed.fullPath) {
       return bestowed.fullPath;
     }
-    var givenPath = scriptsArray[scriptsArray.length - 1].src;
+    var givenPath = scriptsArray[0].src;
     var parts = givenPath.split('/');
     parts.pop();
     var newPath = parts.join('/');
