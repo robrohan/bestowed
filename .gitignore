@@ -1,6 +1,10 @@
 .DS_Store
 *~
+*.swp
+\#*\#
 .tern-port
 webqem
 node_modules
 build
+dist
+.cache
